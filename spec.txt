@@ -1,0 +1,43 @@
+I’d like your help creating a single SQL table for my small business. Please see the details below:
+
+1 Business Scenario
+I run a coffee kiosk that sells drinks and pastries. We don’t have a big POS system — I just need a simple way to record each sale in a single database table. Every purchase should be logged with enough details to track revenue, products sold, and payment methods.
+
+2 Description (Owner’s Perspective)
+As the kiosk owner, I want to see:
+
+What items are selling (e.g., cappuccinos vs croissants).
+
+How much money we made each day.
+
+How much came in from cash vs card payments.
+
+The ability to reverse/refund a sale if needed.
+
+I don’t want complicated systems with multiple tables. Just one table that holds all sales records.
+
+3 Reports Needed
+Please make sure the table can support these reports:
+
+Daily revenue: How much money did we make today?
+
+Top products: What are the top 5 products by sales volume or revenue in the last month?
+
+Payment reconciliation: How much came in by cash vs card each day?
+
+4 Clarifying Questions (and My Answers)
+
+Q: Should each product sold be its own row, or should we group them into a basket?  
+A: Each product type should be its own row. If someone buys 2 cappuccinos and 1 croissant, that’s two rows.
+
+Q: How should refunds be handled?  
+A: Insert a reversal row with the same product and price, but a negative quantity and total. Don’t delete old rows.
+
+Q: Do we need to track customers?  
+A: No, just products and payments.
+
+Q: Do we need discounts?  
+A: Yes, but keep it simple. If a discount applies, bake it into the unit price.
+
+Q: Should we track taxes separately?  
+A: No, prices are stored as final “tax included” amounts.
